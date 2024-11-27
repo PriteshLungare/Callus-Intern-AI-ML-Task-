@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <style>
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    rect {
+      fill: #f9f9f9;
+      stroke: #aaa;
+      stroke-width: 1.5px;
+    }
+    .component {
+      fill: #d6eaf8;
+      stroke: #3498db;
+      stroke-width: 1.5px;
+    }
+    .arrow {
+      fill: none;
+      stroke: #555;
+      stroke-width: 2px;
+      marker-end: url(#arrowhead);
+    }
+    #arrowhead {
+      fill: #555;
+    }
+  </style>
+
+  <defs>
+    <!-- Define arrowhead marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <!-- Background rectangle -->
+  <rect x="20" y="20" width="760" height="560" rx="15" ry="15" />
+
+  <!-- Title -->
+  <text x="400" y="50" font-size="18px" font-weight="bold">Movie Recommendation Engine Architecture</text>
+
+  <!-- Data Ingestion & Preprocessing -->
+  <g class="component">
+    <rect x="40" y="80" width="220" height="120" rx="10" ry="10" />
+    <text x="150" y="100">Data Ingestion &amp; Preprocessing</text>
+    <text x="150" y="120" font-size="12px">- Read CSV file</text>
+    <text x="150" y="140" font-size="12px">- Handle data types</text>
+    <text x="150" y="160" font-size="12px">- Feature engineering</text>
+  </g>
+
+  <!-- Graph Database Construction -->
+  <g class="component">
+    <rect x="320" y="80" width="220" height="120" rx="10" ry="10" />
+    <text x="430" y="100">Graph Database Construction</text>
+    <text x="430" y="120" font-size="12px">- Create nodes (movies, actors, genres)</text>
+    <text x="430" y="140" font-size="12px">- Add edges based on shared actors</text>
+    <text x="430" y="160" font-size="12px">- Use NetworkX library</text>
+  </g>
+
+  <!-- Similarity Calculation -->
+  <g class="component">
+    <rect x="600" y="80" width="220" height="120" rx="10" ry="10" />
+    <text x="710" y="100">Similarity Calculation</text>
+    <text x="710" y="120" font-size="12px">- Structural similarity</text>
+    <text x="710" y="140" font-size="12px">- Feature-based similarity</text>
+    <text x="710" y="160" font-size="12px">- Rating-based similarity</text>
+  </g>
+
+  <!-- Recommendation Generation -->
+  <g class="component">
+    <rect x="320" y="240" width="220" height="120" rx="10" ry="10" />
+    <text x="430" y="260">Recommendation Generation</text>
+    <text x="430" y="280" font-size="12px">- Find top N most similar movies</text>
+    <text x="430" y="300" font-size="12px">- Use similarity scores</text>
+    <text x="430" y="320" font-size="12px">- Return movie titles</text>
+  </g>
+
+  <!-- Database -->
+  <g class="component">
+    <rect x="40" y="480" width="220" height="100" rx="10" ry="10" />
+    <text x="150" y="500">Database</text>
+    <text x="150" y="520" font-size="12px">- Use Neo4j (Graph DB)</text>
+    <text x="150" y="540" font-size="12px">- Store movie, actor, director data</text>
+  </g>
+
+  <!-- Arrows -->
+  <g class="arrow">
+    <!-- Arrow from Data Ingestion to Graph Database -->
+    <path d="M260,140 L320,140" />
+
+    <!-- Arrow from Graph Database to Similarity Calculation -->
+    <path d="M540,140 L600,140" />
+
+    <!-- Arrow from Graph Database to Recommendation Generation -->
+    <path d="M430,200 L430,240" />
+
+    <!-- Arrow from Database to Graph Database -->
+    <path d="M150,480 L150,200" />
+  </g>
+</svg>
